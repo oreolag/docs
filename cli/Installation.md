@@ -3,7 +3,7 @@ title: Installation
 icon: Download
 ---
 
-## Installation
+<!-- ## Installation -->
 
 Run the following command on your Linux host (see [Supported Platforms](#supported-platforms)):
 
