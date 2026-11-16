@@ -17,3 +17,14 @@ export const cliSource = loader({
   },
   source: cli.toFumadocsSource(),
 });
+
+const mgmt = defineDocs({
+  dir: '../mgmt',
+  docs: { postprocess: { includeProcessedMarkdown: true } },
+});
+
+export const mgmtSource = loader({
+  baseUrl: '/mgmt',
+  slugs(_file, next) { return next().map((slug) => slug.toLowerCase()); },
+  source: mgmt.toFumadocsSource(),
+});

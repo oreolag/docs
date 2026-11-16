@@ -3,7 +3,7 @@ import { GitHubIcon } from './github-icon';
 import { useState } from 'react';
 import { Check, ChevronDown, Copy, ExternalLink, FileText } from 'lucide-react';
 
-export function PageActions({ markdown, markdownUrl }: { markdown: string; markdownUrl: string }) {
+export function PageActions({ markdown, markdownUrl, githubUrl = "https://github.com/oreolag/docs/tree/main/cli" }: { markdown: string; markdownUrl: string; githubUrl?: string }) {
   const [copied, setCopied] = useState(false);
   const [failed, setFailed] = useState(false);
   async function copy() {
@@ -22,7 +22,7 @@ export function PageActions({ markdown, markdownUrl }: { markdown: string; markd
       <summary>Open <ChevronDown size={15} /></summary>
       <div className="oreol-open-menu">
         <a href={markdownUrl} target="_blank" rel="noreferrer"><FileText size={15} />Markdown <ExternalLink size={13} /></a>
-        <a href="https://github.com/oreolag/docs/tree/main/cli" target="_blank" rel="noreferrer"><GitHubIcon size={15} />GitHub <ExternalLink size={13} /></a>
+        <a href={githubUrl} target="_blank" rel="noreferrer"><GitHubIcon size={15} />GitHub <ExternalLink size={13} /></a>
       </div>
     </details>
   </div>;

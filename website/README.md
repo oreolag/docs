@@ -14,18 +14,18 @@ npm run dev
 ```
 
 - CLI: http://127.0.0.1:3000/docs/cli/
-- Management placeholder: http://127.0.0.1:3000/docs/mgmt/
+- Management: http://127.0.0.1:3000/docs/mgmt/
 
-The CLI overview is sample copy for reviewing the design. The Management
-content folder is not connected yet; its selector entry shows a placeholder.
+The CLI overview is sample copy for reviewing the design. Management pages
+are connected from `mgmt/` and contain placeholders to fill in later.
 
 ## Structure
 
 - `../cli/`: CLI Markdown/MDX content and menu order (`meta.json`).
-- `../mgmt/`: reserved for the later Management documentation.
+- `../mgmt/`: Management content, including separate Introduction, odev and System management sections.
 - `src/app/`: page routes, the visual theme, and the static search/Markdown endpoints.
 - `src/components/`: shared layout, section selector, search and page actions.
-- `src/lib/source.ts`: connects the CLI content to the website.
+- `src/lib/source.ts`: connects the CLI and Management content to the website.
 
 Dependencies, caches and build output are ignored by Git. Fonts are bundled
 locally; the build does not need to fetch Google Fonts.
@@ -54,7 +54,7 @@ itself or change repository settings.
 Published addresses:
 
 - CLI: https://oreolag.github.io/docs/cli/
-- Management placeholder: https://oreolag.github.io/docs/mgmt/
+- Management: https://oreolag.github.io/docs/mgmt/
 
 Review, commit and push changes when ready to publish. Local edits alone do
 not update the public website.

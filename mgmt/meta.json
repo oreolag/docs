@@ -1,0 +1,15 @@
+{
+  "title": "Management",
+  "pages": [
+    "---Introduction---",
+    "index",
+    "Installation",
+    "---odev---",
+    "odev/installation",
+    "odev/user-management",
+    "odev/cmdb",
+    "odev/uninstall",
+    "---System management---",
+    "system-management/incus-installation"
+  ]
+}

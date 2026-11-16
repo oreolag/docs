@@ -1,15 +1,12 @@
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { Terminal, Settings2 } from 'lucide-react';
-import { cliSource } from '@/lib/source';
+import { cliSource, mgmtSource } from '@/lib/source';
 import type { ReactNode } from 'react';
 
 export function SectionLayout({ children, section = 'cli' }: {
   children: ReactNode; section?: 'cli' | 'mgmt';
 }) {
-  const tree = section === 'cli' ? cliSource.getPageTree() : {
-    name: 'Management',
-    children: [{ type: 'page' as const, name: 'Overview', url: '/mgmt' }],
-  };
+  const tree = section === 'cli' ? cliSource.getPageTree() : mgmtSource.getPageTree();
   return (
     <DocsLayout
       tree={tree}
