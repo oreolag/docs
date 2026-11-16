@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { GitHubIcon } from './github-icon';
+import { ThemeMenu } from './theme-menu';
 import { Languages } from 'lucide-react';
 
 export function PageToolbar() {
@@ -8,5 +9,6 @@ export function PageToolbar() {
     <Link href="https://github.com/oreolag/docs" aria-label="Documentation on GitHub" target="_blank" rel="noreferrer">
       <GitHubIcon size={19} />
     </Link>
+    <ThemeMenu />
   </div>;
 }

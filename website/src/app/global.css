@@ -85,3 +85,23 @@
   .oreol-page-toolbar { margin-top:0; margin-bottom:20px; }
   .oreol-home nav { grid-template-columns:1fr; }
 }
+
+
+.oreol-theme-trigger {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 9px; cursor: pointer;
+}
+.oreol-theme-trigger:hover, .oreol-theme-trigger[data-popup-open] {
+  color: var(--color-fd-foreground); background: var(--color-fd-accent);
+}
+.oreol-theme-trigger:focus-visible { outline: 2px solid var(--color-fd-primary); outline-offset: 3px; }
+.oreol-theme-popover {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  width: 300px; max-width: calc(100vw - 24px); padding: 12px 16px;
+  border-radius: 18px; background: var(--color-fd-background);
+}
+.oreol-theme-label { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; }
+.oreol-theme-label > svg { color: var(--color-fd-muted-foreground); }
+.oreol-theme-options { background: var(--color-fd-card); }
+.oreol-theme-options button { width: 30px; height: 30px; cursor: pointer; }
+.oreol-theme-options button:last-child { order: -1; }
