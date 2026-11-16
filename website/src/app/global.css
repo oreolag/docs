@@ -76,7 +76,8 @@
   #nd-sidebar > div:first-child > button[data-search-full] { order: 2; min-height: 42px; }
   #nd-sidebar > div:first-child > button:not([data-search-full]) { order: 1; min-height: 44px; }
   .oreol-page-toolbar { position: fixed; top: 35px; right: 42px; z-index: 10; margin: 0; }
-  #nd-sidebar > div { border-right:0; }
+  /* The rounded reading panel supplies its own border. */
+  #nd-sidebar { border-inline-end: 0; }
   #nd-page { padding-top:100px; padding-inline:32px; }
   #nd-page h1 { font-size:36px; letter-spacing:-.035em; font-weight:650; }
   #nd-toc { padding-top:118px; }
