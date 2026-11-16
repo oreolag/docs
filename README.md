@@ -1,1 +1,2 @@
-# docs
+# Oreol Docs
+Welcome to Oreol Docs! Oreol’s documentation is open source, meaning anyone from inside or outside the company can contribute. For full contributing guidelines, visit our contributing guide.
