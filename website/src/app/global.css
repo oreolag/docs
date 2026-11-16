@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@theme { --font-sans: 'Inter Variable', sans-serif; }
+:root {
+  --color-fd-primary: #287aff;
+  --color-fd-primary-foreground: white;
+  --color-fd-background: #fff;
+  --color-fd-card: #f6f6f6;
+  --color-fd-muted-foreground: #757575;
+  --color-fd-border: #e3e3e3;
+  --fd-layout-width: 100vw;
+}
+.dark {
+  --color-fd-primary: #75a7ff;
+  --color-fd-primary-foreground: #101216;
+  --color-fd-background: #171719;
+  --color-fd-card: #111113;
+  --color-fd-border: #2d2d30;
+  --color-fd-muted-foreground: #a2a2a7;
+}
+.oreol-mark {
+  display: inline-block; flex-shrink: 0; width: 24px; height: 24px;
+  border-radius: 50%; border: 1px solid #9bc6ff;
+  background: linear-gradient(135deg, #fff 15%, #e7f1ff 40%, #498dff 72%, #1967f2);
+}
+#nd-sidebar a[href='/docs/cli/'] .oreol-mark { margin-right: 2px; }
+.oreol-page-toolbar {
+  display: flex; align-items: center; justify-content: flex-end; gap: 22px;
+  color: var(--color-fd-muted-foreground); font-size: 14px;
+  margin-top: -28px; margin-bottom: 38px;
+}
+.oreol-language { display: flex; align-items: center; gap: 8px; }
+.oreol-page-toolbar a:hover { color: var(--color-fd-foreground); }
+.oreol-actions {
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--color-fd-border); padding: 8px 0 28px; margin-bottom: 12px;
+}
+.oreol-actions button, .oreol-open summary {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid var(--color-fd-border); border-radius: 8px;
+  background: var(--color-fd-card); padding: 8px 12px; font-size: 14px;
+  font-weight: 550; cursor: pointer; list-style: none;
+}
+.oreol-open summary::-webkit-details-marker { display: none; }
+.oreol-actions button:hover, .oreol-open summary:hover { background: var(--color-fd-accent); }
+.oreol-open { position: relative; }
+.oreol-open-menu {
+  position: absolute; top: calc(100% + 6px); left: 0; width: 180px; z-index: 30;
+  padding: 5px; border: 1px solid var(--color-fd-border); border-radius: 10px;
+  background: var(--color-fd-background); box-shadow: 0 8px 24px #00000012;
+}
+.oreol-open-menu a { display:flex; align-items:center; gap:8px; padding:9px; border-radius:6px; font-size:13px; }
+.oreol-open-menu a:hover { background:var(--color-fd-accent); }
+.oreol-home { max-width: 760px; width: 100%; margin: 12vh auto; padding: 24px; }
+.oreol-home h1 { font-size: 36px; font-weight: 650; margin-block: 20px 10px; letter-spacing:-.04em; }
+.oreol-home p { color: var(--color-fd-muted-foreground); }
+.oreol-home nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:32px; }
+.oreol-home nav a { padding:22px; border:1px solid var(--color-fd-border); border-radius:14px; font-weight:600; }
+.oreol-home nav a:hover { border-color: var(--color-fd-primary); }
+.oreol-home nav span { display:block; font-size:14px; margin-top:10px; font-weight:400; color:var(--color-fd-muted-foreground); }
+@media (min-width: 768px) {
+  #nd-docs-layout {
+    isolation:isolate; padding:14px 16px 14px 0;
+    background:var(--color-fd-card); min-height:100dvh;
+    --fd-layout-width: 100vw;
+    --fd-sidebar-width: 276px;
+  }
+  #nd-docs-layout::before {
+    content:''; position:fixed; inset:14px 16px 14px var(--fd-sidebar-col);
+    z-index:-1; pointer-events:none; border:1px solid var(--color-fd-border);
+    border-radius:20px; background:var(--color-fd-background); box-shadow:0 2px 5px #0000000b;
+  }
+  #nd-sidebar > div:first-child > div:first-child { margin-bottom: 22px; }
+  #nd-sidebar > div:first-child > button[data-search-full] { order: 2; min-height: 42px; }
+  #nd-sidebar > div:first-child > button:not([data-search-full]) { order: 1; min-height: 44px; }
+  .oreol-page-toolbar { position: fixed; top: 35px; right: 42px; z-index: 10; margin: 0; }
+  #nd-sidebar > div { border-right:0; }
+  #nd-page { padding-top:100px; padding-inline:32px; }
+  #nd-page h1 { font-size:36px; letter-spacing:-.035em; font-weight:650; }
+  #nd-toc { padding-top:118px; }
+}
+@media (max-width: 767px) {
+  .oreol-page-toolbar { margin-top:0; margin-bottom:20px; }
+  .oreol-home nav { grid-template-columns:1fr; }
+}
