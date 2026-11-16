@@ -41,5 +41,20 @@ The static output is written to `out/`, ready for GitHub Pages under `/docs/`.
 The production build uses Webpack so Markdown outside this folder can resolve
 its imports from this project's dependencies.
 
-This step adds no publishing workflow and changes no GitHub Pages settings.
-Nothing publishes automatically.
+## Publishing
+
+`.github/workflows/pages.yml` checks and builds pull requests targeting `main`.
+Pushes to `main` publish the static output to GitHub Pages after the checks pass.
+The workflow can also be started manually from the Actions tab on `main`.
+
+Before the first deployment, open the repository's **Settings → Pages** and
+select **GitHub Actions** as the source. This workflow does not enable Pages
+itself or change repository settings.
+
+Published addresses:
+
+- CLI: https://oreolag.github.io/docs/cli/
+- Management placeholder: https://oreolag.github.io/docs/mgmt/
+
+Review, commit and push changes when ready to publish. Local edits alone do
+not update the public website.
