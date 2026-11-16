@@ -3,6 +3,10 @@
   "pages": [
     "---Introduction---",
     "index",
-    "Installation"
+    "Installation",
+    "---Playbooks---",
+    "playbooks/examples",
+    "---Workflows---",
+    "workflows/examples"
   ]
 }
