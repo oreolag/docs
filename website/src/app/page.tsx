@@ -5,8 +5,8 @@ export default function Home() {
     <h1>OREOL Documentation</h1>
     <p>Choose your documentation.</p>
     <nav aria-label="Documentation sections">
-      <Link href="/cli">CLI <span>Command-line tools →</span></Link>
-      <Link href="/mgmt">Management <span>Infrastructure and administration →</span></Link>
+      <Link href="/cli">CLI <span>The CLI for hetero<em>genius</em> computing →</span></Link>
+      <Link href="/mgmt">Management <span>The management toolkit for your Oreol cluster →</span></Link>
     </nav>
   </main>;
 }

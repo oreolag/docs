@@ -1,5 +1,4 @@
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
-import { Terminal, Settings2 } from 'lucide-react';
 import { cliSource, mgmtSource } from '@/lib/source';
 import type { ReactNode } from 'react';
 
@@ -12,8 +11,8 @@ export function SectionLayout({ children, section = 'cli' }: {
       tree={tree}
       nav={{ title: <><span className="oreol-mark" aria-hidden="true" />OREOL Docs</>, url: '/cli' }}
       tabs={[
-        { title: 'CLI', description: 'Command-line tools', url: '/cli', icon: <Terminal /> },
-        { title: 'Management', description: 'Infrastructure and administration', url: '/mgmt', icon: <Settings2 /> },
+        { title: 'CLI', description: <>The CLI for hetero<em>genius</em> computing</>, url: '/cli' },
+        { title: 'Management', description: 'The management toolkit for your Oreol cluster', url: '/mgmt' },
       ]}
       themeSwitch={{ enabled: false }}
     >
