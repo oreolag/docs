@@ -1,5 +1,6 @@
+import { MarkdownDescription } from '@/components/markdown-description';
 import { mgmtSource } from '@/lib/source';
-import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+import { DocsBody, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
 import { getMDXComponents } from '@/components/mdx';
 import { PageToolbar } from '@/components/page-toolbar';
 import { PageActions } from '@/components/page-actions';
@@ -17,7 +18,7 @@ export default async function Page({ params }: Props) {
     tableOfContent={{ style: 'block' }} tableOfContentPopover={{ style: 'block' }}>
     <PageToolbar />
     <DocsTitle>{page.data.title}</DocsTitle>
-    <DocsDescription>{page.data.description}</DocsDescription>
+    <MarkdownDescription>{page.data.description}</MarkdownDescription>
     <PageActions githubUrl="https://github.com/oreolag/docs/tree/main/mgmt" markdown={markdown} markdownUrl={`/docs/markdown/mgmt/${file}.md`} />
     <DocsBody><MDX components={getMDXComponents()} /></DocsBody>
   </DocsPage>;
