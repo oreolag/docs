@@ -1,6 +1,5 @@
 ---
 title: Installation
-icon: Download
 ---
 
 ## Install with the Script

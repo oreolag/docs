@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Infrastructure and administration with OREOL Management.
+description: The management toolkit for your Oreol cluster.
 ---
 
 Documentation coming soon.
