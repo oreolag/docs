@@ -6,7 +6,7 @@ export default function Home() {
     <p>Choose your documentation.</p>
     <nav aria-label="Documentation sections">
       <Link href="/cli">CLI <span>The CLI for hetero<em>genius</em> computing →</span></Link>
-      <Link href="/mgmt">Management <span>The management toolkit for your Oreol cluster →</span></Link>
+      <Link href="/mgmt">MGMT <span>The management toolkit for your Oreol cluster →</span></Link>
     </nav>
   </main>;
 }

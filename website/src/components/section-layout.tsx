@@ -12,7 +12,7 @@ export function SectionLayout({ children, section = 'cli' }: {
       nav={{ title: <><span className="oreol-mark" aria-hidden="true" />OREOL Docs</>, url: '/cli' }}
       tabs={[
         { title: 'CLI', description: <>The CLI for hetero<em>genius</em> computing</>, url: '/cli' },
-        { title: 'Management', description: 'The management toolkit for your Oreol cluster', url: '/mgmt' },
+        { title: 'MGMT', description: 'The management toolkit for your Oreol cluster', url: '/mgmt' },
       ]}
       themeSwitch={{ enabled: false }}
     >
