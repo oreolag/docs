@@ -6,3 +6,7 @@ localhost.yml
 
 .Xil.DS_Store
 **/.DS_Store
+
+# Generated README sections (recreated by import_readme.py).
+/cli/intro.md
+/mgmt/intro.md
