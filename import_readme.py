@@ -11,11 +11,12 @@ Generated files are ignored by Git. Source repositories are never modified.
 """
 
 import argparse
+import json
 from pathlib import Path
 import re
 import sys
 import tempfile
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 
 def extract_sections(markdown, target):
@@ -73,8 +74,19 @@ def main():
     parser.add_argument("target", choices=["cli", "mgmt"])
     args = parser.parse_args()
     docs_root = Path(__file__).resolve().parent
-    source = f"https://raw.githubusercontent.com/oreolag/{args.target}/main/README.md"
     try:
+        # Resolve main first: the branch-based raw URL can briefly serve stale content.
+        request = Request(
+            f"https://api.github.com/repos/oreolag/{args.target}/commits/main",
+            headers={"Accept": "application/vnd.github+json",
+                     "Cache-Control": "no-cache", "User-Agent": "oreol-readme-importer"},
+        )
+        with urlopen(request, timeout=30) as response:
+            commit = json.load(response)["sha"]
+        if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-f]{40}", commit):
+            raise ValueError("GitHub returned an invalid commit SHA.")
+        print(f"Importing oreolag/{args.target} README at {commit}")
+        source = f"https://raw.githubusercontent.com/oreolag/{args.target}/{commit}/README.md"
         with urlopen(source, timeout=30) as response:
             markdown = response.read().decode("utf-8")
         # Validate every section before changing any generated file.
@@ -85,7 +97,7 @@ def main():
             destination = docs_root / args.target / f"{name}.md"
             changed = write_section(destination, content, title)
             print(f'{"Generated" if changed else "Unchanged"}: {destination}')
-    except (OSError, UnicodeError, ValueError) as error:
+    except (OSError, UnicodeError, ValueError, KeyError, TypeError) as error:
         parser.exit(1, f"Import failed: {error}\n")
     return 0
 
