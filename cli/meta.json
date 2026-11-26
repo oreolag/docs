@@ -3,7 +3,7 @@
   "pages": [
     "---Getting started---",
     "Installation",
-    "How It Works",
+    "how-it-works",
     "---Playbooks---",
     "playbooks/examples",
     "---Workflows---",
