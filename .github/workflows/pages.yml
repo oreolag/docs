@@ -27,6 +27,9 @@ jobs:
       - name: Generate CLI README sections
         run: python3 import_readme.py cli
         working-directory: .
+      - name: Generate Management README sections
+        run: python3 import_readme.py mgmt
+        working-directory: .
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:

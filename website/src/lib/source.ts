@@ -36,6 +36,16 @@ const mgmt = defineDocs({
 
 export const mgmtSource = loader({
   baseUrl: '/mgmt',
+  pageTree: {
+    transformers: [{
+      separator(node) {
+        if (node.name === 'Getting started') {
+          return { ...node, name: createElement(Link, { href: '/mgmt' }, 'Getting started') };
+        }
+        return node;
+      },
+    }],
+  },
   slugs(_file, next) { return next().map((slug) => slug.toLowerCase()); },
   source: mgmt.toFumadocsSource(),
 });

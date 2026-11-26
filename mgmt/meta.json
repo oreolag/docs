@@ -1,9 +1,9 @@
 {
   "title": "Management",
   "pages": [
-    "---Introduction---",
-    "index",
+    "---Getting started---",
     "Installation",
+    "how-it-works",
     "---odev---",
     "odev/installation",
     "odev/user-management",
