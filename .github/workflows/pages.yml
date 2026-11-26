@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
-      - name: Generate CLI introduction
+      - name: Generate CLI README sections
         run: python3 import_readme.py cli
         working-directory: .
       - name: Set up Node.js

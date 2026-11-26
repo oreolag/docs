@@ -1,9 +1,9 @@
 {
   "title": "CLI",
   "pages": [
-    "---Introduction---",
-    "index",
+    "---Getting started---",
     "Installation",
+    "How It Works",
     "---Playbooks---",
     "playbooks/examples",
     "---Workflows---",
