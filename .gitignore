@@ -10,3 +10,6 @@ localhost.yml
 # Generated README sections (recreated by import_readme.py).
 /cli/intro.md
 /mgmt/intro.md
+
+/cli/cli_readme_*.md
+/mgmt/mgmt_readme_*.md
